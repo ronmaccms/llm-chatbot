@@ -67,3 +67,54 @@ Self-Policing Practices (Company1, Company2, ... , Company9):
 __Task:__ Gather data on the self-policing practices of the Big Nine.
 __Implementation:__ Identify and extract data from reliable sources.
 __Outcome:__ Clean dataset for the self-policing practices.
+
+
+
+## Getting Started
+
+To get a local copy up and running, follow these steps:
+
+### Prerequisites
+
+This project uses a Python virtual environment for managing dependencies. Make sure you have Python installed on your machine. You can download Python [here](https://www.python.org/downloads/).
+
+### Installation
+
+<h2>Getting Started</h2>
+
+<p>To get a local copy up and running, follow these steps:</p>
+
+<h3>Prerequisites</h3>
+
+<p>This project uses a Python virtual environment for managing dependencies. Make sure you have Python installed on your machine. You can download Python <a href="https://www.python.org/downloads/">here</a>.</p>
+
+<ol>
+  <li>Clone the repository
+    <pre><code>git clone https://github.com/your_username_/Project-Name.git</code></pre>
+  </li>
+  <li>Navigate to the project directory
+    <pre><code>cd Project-Name</code></pre>
+  </li>
+  <li>Create a Python virtual environment
+    <pre><code>python -m venv .venv</code></pre>
+  </li>
+  <li>Activate the virtual environment
+    <ul>
+      <li>On Windows, use:
+        <pre><code>. .\.venv\Scripts\activate</code></pre>
+      </li>
+      <li>On Unix or MacOS, use:
+        <pre><code>source .venv/bin/activate</code></pre>
+      </li>
+    </ul>
+  </li>
+  <li>Install the required packages
+    <pre><code>pip install -r requirements.txt</code></pre>
+  </li>
+</ol>
+
+<h3>Deactivation</h3>
+
+<p>When you're done working, you can deactivate the virtual environment by running:</p>
+
+<pre><code>deactivate</code></pre>
