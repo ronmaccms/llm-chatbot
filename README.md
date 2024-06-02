@@ -123,4 +123,4 @@ To get a local copy up and running, follow these steps:
 
 ### Deactivation
 
-When you're done working, you can deactivate the virtual environment by running:
+When you're done working, you can deactivate the virtual environment by running: crtl + c
