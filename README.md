@@ -77,46 +77,50 @@ __Outcome:__ Clean dataset for the self-policing practices. -->
 
 To get a local copy up and running, follow these steps:
 
-<!-- ### Prerequisites
+1. **Clone the repository**
+    ```
+    git clone https://github.com/your_username_/Project-Name.git
+    ```
 
-This project uses a Python virtual environment for managing dependencies. Make sure you have Python installed on your machine. You can download Python [here](https://www.python.org/downloads/).
+2. **Navigate to the project directory**
+    ```
+    cd Project-Name
+    ```
 
-### Installation -->
+3. **Create a Python virtual environment**
+    ```
+    python -m venv .venv
+    ```
 
-<!-- <h2>Getting Started</h2> -->
+4. **Activate the virtual environment**
+    - On Windows, use:
+        ```
+        . .\.venv\Scripts\activate
+        ```
+    - On Unix or MacOS, use:
+        ```
+        source .venv/bin/activate
+        ```
 
-<p>To get a local copy up and running, follow these steps:</p>
+5. **Create a .env file**
+    - In the project directory, create a new file named `.env`.
+    - Open the `.env` file and add your OpenAI and Hugging Face API keys like this:
+        ```
+        OPENAI_API_KEY=your_openai_api_key
+        HUGGINGFACE_API_TOKEN=your_huggingface_api_token
+        ```
+    - Save the `.env` file. **Do not** commit this file to your repository. It contains sensitive information.
 
-<ol>
-  <li>Clone the repository
-    <pre><code>git clone https://github.com/your_username_/Project-Name.git</code></pre>
-  </li>
-  <li>Navigate to the project directory
-    <pre><code>cd Project-Name</code></pre>
-  </li>
-  <li>Create a Python virtual environment
-    <pre><code>python -m venv .venv</code></pre>
-  </li>
-  <li>Activate the virtual environment
-    <ul>
-      <li>On Windows, use:
-        <pre><code>. .\.venv\Scripts\activate</code></pre>
-      </li>
-      <li>On Unix or MacOS, use:
-        <pre><code>source .venv/bin/activate</code></pre>
-      </li>
-    </ul>
-  </li>
-  <li>Install the required packages
-    <pre><code>pip install -r requirements.txt</code></pre>
-  </li>
-  <li>Run the Streamlit app
-    <pre><code>streamlit run app.py</code></pre>
-  </li>
-</ol>
+6. **Install the required packages**
+    ```
+    pip install -r requirements.txt
+    ```
 
-<h3>Deactivation</h3>
+7. **Run the Streamlit app**
+    ```
+    streamlit run app.py
+    ```
 
-<p>When you're done working, you can deactivate the virtual environment by running:</p>
+### Deactivation
 
-<pre><code>deactivate</code></pre>
+When you're done working, you can deactivate the virtual environment by running:
