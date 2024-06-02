@@ -42,9 +42,9 @@ __Project Breakdown__
 
 __Data Collection:__ Gather data on AI policies, regulatory frameworks, and self-policing practices of the Big Nine tech companies in the United States and China.
 
-__Model Training:__ Use the collected data to train the ML model to analyze the geopolitical and ethical implications of AI governance.
+__Model Training:__ Use the collected data to train a language learning model (LLM) to analyze the geopolitical and ethical implications of AI governance. The LLM can be asked questions about these topics, and its responses can be used for critical reflection and bias analysis.
 
-__Implementation:__ Deploy the trained model to suggest predictions or legislation for self-policing and to guide legislators.
+__Implementation:__ Deploy the trained model to suggest predictions or legislation for self-policing and to guide legislators. The model's responses can also be compared with human understanding to identify any biases or inaccuracies.
 
 __Data Collection Plan__
 
@@ -68,8 +68,6 @@ __Task:__ Gather data on the self-policing practices of the Big Nine.
 __Implementation:__ Identify and extract data from reliable sources.
 __Outcome:__ Clean dataset for the self-policing practices.
 
-
-
 ## Getting Started
 
 To get a local copy up and running, follow these steps:
@@ -83,10 +81,6 @@ This project uses a Python virtual environment for managing dependencies. Make s
 <h2>Getting Started</h2>
 
 <p>To get a local copy up and running, follow these steps:</p>
-
-<h3>Prerequisites</h3>
-
-<p>This project uses a Python virtual environment for managing dependencies. Make sure you have Python installed on your machine. You can download Python <a href="https://www.python.org/downloads/">here</a>.</p>
 
 <ol>
   <li>Clone the repository
