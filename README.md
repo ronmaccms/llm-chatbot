@@ -40,19 +40,24 @@ This project is developed under the course IAAC: AI 2023-24 at [IAAC](https://ia
 
 __Project Breakdown__
 
-__Data Collection:__ Gather data on AI policies, regulatory frameworks, and self-policing practices of the Big Nine tech companies in the United States and China.
+This project is a Streamlit application that allows users to interact with a language learning model (LLM) to ask questions about multiple PDF documents. The application uses the OpenAI language model to analyze the text from the PDF documents and generate responses to the user's questions.
 
-__Model Training:__ Use the collected data to train a language learning model (LLM) to analyze the geopolitical and ethical implications of AI governance. The LLM can be asked questions about these topics, and its responses can be used for critical reflection and bias analysis.
+Here's how it works:
 
-__Implementation:__ Deploy the trained model to suggest predictions or legislation for self-policing and to guide legislators. The model's responses can also be compared with human understanding to identify any biases or inaccuracies.
+1. **PDF Text Extraction:** The application reads the text from the uploaded PDF documents.
 
-__Data Collection Plan__
+2. **Text Chunking:** The text from the PDFs is split into manageable chunks using the `CharacterTextSplitter` from the `langchain` library.
 
-__We will focus on collecting data for the Big Nine tech companies, starting with Company1. The project is divided into three data sets, each assigned to a team member.__
+3. **Vector Store Creation:** A vector store is created from the text chunks using OpenAI embeddings. The vector store is a data structure that allows efficient similarity search of vectors.
 
+4. **Conversation Chain Creation:** A conversation chain is created, which is a sequence of interactions between the user and the LLM. The conversation chain uses the vector store for retrieval of relevant text chunks and a memory buffer to keep track of the conversation history.
+
+5. **User Interaction:** The user can ask a question about the documents, and the application will display the response from the LLM. The conversation history is also displayed in the application.
+
+This project is an example of how language learning models can be used to analyze and interact with text data in a user-friendly way. It demonstrates the power of AI in understanding and generating human-like text, providing useful and relevant responses to user queries.
 AI Policies and Regulatory Frameworks (Company1):
 
-__Task:__ Develop a web scraping script to collect data on AI policies and regulatory frameworks.
+<!-- __Task:__ Develop a web scraping script to collect data on AI policies and regulatory frameworks.
 __Implementation:__ Use the provided GitHub script skeleton to scrape relevant websites and databases.
 __Outcome:__ Clean, structured dataset for AI policies and regulatory frameworks.
 
@@ -66,19 +71,19 @@ Self-Policing Practices (Company1, Company2, ... , Company9):
 
 __Task:__ Gather data on the self-policing practices of the Big Nine.
 __Implementation:__ Identify and extract data from reliable sources.
-__Outcome:__ Clean dataset for the self-policing practices.
+__Outcome:__ Clean dataset for the self-policing practices. -->
 
 ## Getting Started
 
 To get a local copy up and running, follow these steps:
 
-### Prerequisites
+<!-- ### Prerequisites
 
 This project uses a Python virtual environment for managing dependencies. Make sure you have Python installed on your machine. You can download Python [here](https://www.python.org/downloads/).
 
-### Installation
+### Installation -->
 
-<h2>Getting Started</h2>
+<!-- <h2>Getting Started</h2> -->
 
 <p>To get a local copy up and running, follow these steps:</p>
 
