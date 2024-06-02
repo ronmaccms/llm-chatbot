@@ -17,20 +17,7 @@
     <a href="andres.roncal@students.iaac.net">Request Feature</a>
   </p>
 </div>
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li><a href="#about-the-project">About The Project</a></li>
-    <li><a href="#getting-started">Getting Started</a></li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#challenges">Challenges</a></li>
-    <li><a href="#future-work">Future Work</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#team">Team</a></li>
-    <li><a href="#acknowledgements">Acknowledgements</a></li>
-  </ol>
-</details>
+
 <!-- ABOUT THE PROJECT -->
 
 ## About The Project
