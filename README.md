@@ -111,6 +111,9 @@ This project uses a Python virtual environment for managing dependencies. Make s
   <li>Install the required packages
     <pre><code>pip install -r requirements.txt</code></pre>
   </li>
+  <li>Run the Streamlit app
+    <pre><code>streamlit run app.py</code></pre>
+  </li>
 </ol>
 
 <h3>Deactivation</h3>
