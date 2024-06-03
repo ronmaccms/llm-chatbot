@@ -27,21 +27,7 @@ This project is developed under the course IAAC: AI 2023-24 at [IAAC](https://ia
 
 __Project Breakdown__
 
-This project is a Streamlit application that allows users to interact with a llm to ask questions about multiple PDF documents. The application uses openai to analyze the text from the PDF documents and generate responses to the user's questions. There is some code to connect to huggingface if you like as well.
-
-Here's how it works:
-
-1. **PDF Text Extraction:** The application reads the text from the uploaded PDF documents.
-
-2. **Text Chunking:** The text from the PDFs is split into manageable chunks.
-
-3. **Vector Store Creation:** A vector store is created from the text chunks using OpenAI embeddings. The vector store is a data structure that allows efficient similarity search of vectors.
-
-4. **Conversation Chain Creation:** A conversation chain is created, which is a sequence of interactions between the user and the LLM. The conversation chain uses the vector store for retrieval of relevant text chunks and a memory buffer to keep track of the conversation history.
-
-5. **User Interaction:** The user can ask a question about the documents, and the application will display the response.
-
-This project is an example of how language learning models can be used to analyze and interact with text data in a user-friendly way. It demonstrates the power of AI in understanding and generating human-like text, providing useful and relevant responses to user queries.
+This code is for a Streamlit application that allows users to upload PDF documents, extracts the text from those documents, and uses that text to answer user questions. The application uses OpenAI embeddings to convert the text into a format that can be used for information retrieval. The handle_userinput function generates responses to user questions based on the text from the uploaded PDFs.
 
 <!-- AI Policies and Regulatory Frameworks (Company1): -->
 
