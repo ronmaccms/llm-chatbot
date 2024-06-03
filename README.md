@@ -27,7 +27,7 @@ This project is developed under the course IAAC: AI 2023-24 at [IAAC](https://ia
 
 __Project Breakdown__
 
-This project is a Streamlit application that allows users to interact with a openai language model to ask questions about multiple PDF documents. The application uses the model to analyze the text from the PDF documents and generate responses to the user's questions. There is some code to connect to huggingface if you like as well.
+This project is a Streamlit application that allows users to interact with a llm to ask questions about multiple PDF documents. The application uses openai to analyze the text from the PDF documents and generate responses to the user's questions. There is some code to connect to huggingface if you like as well.
 
 Here's how it works:
 
