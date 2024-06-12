@@ -15,6 +15,7 @@ from langchain.chains import ConversationalRetrievalChain
 from htmlTemplates import css, bot_template, user_template, sidebar_text
 from langchain.llms import HuggingFaceHub
 
+# extract text from PDF files
 def get_pdf_text(pdf_paths):
     text = ""
     for pdf_path in pdf_paths:
@@ -23,6 +24,7 @@ def get_pdf_text(pdf_paths):
             text += page.extract_text()
     return text
 
+# split text into chunks
 def get_text_chunks(text):
     text_splitter = CharacterTextSplitter(
         separator="\n",
@@ -33,11 +35,13 @@ def get_text_chunks(text):
     chunks = text_splitter.split_text(text)
     return chunks
 
+# create a vector store from text chunks
 def get_vectorstore(text_chunks):
     embeddings = OpenAIEmbeddings()
     vectorstore = FAISS.from_texts(texts=text_chunks, embedding=embeddings)
     return vectorstore
 
+# create a conversation chain
 def get_conversation_chain(vectorstore):
     llm = ChatOpenAI()
     memory = ConversationBufferMemory(
@@ -49,6 +53,7 @@ def get_conversation_chain(vectorstore):
     )
     return conversation_chain
 
+# handle user input and generate a response
 def handle_userinput(user_question):
     if st.session_state.conversation:
         response = st.session_state.conversation({'question': user_question})
@@ -61,6 +66,7 @@ def handle_userinput(user_question):
     else:
         st.warning("Please process the documents first.")
 
+# run the Streamlit app
 def main():
     load_dotenv()
     st.set_page_config(page_title="Chat with LegisBot")
