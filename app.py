@@ -4,6 +4,7 @@
 
 import streamlit as st
 from dotenv import load_dotenv
+import os
 from PyPDF2 import PdfReader
 from langchain.text_splitter import CharacterTextSplitter
 from langchain.embeddings import OpenAIEmbeddings, HuggingFaceInstructEmbeddings
@@ -11,13 +12,13 @@ from langchain.vectorstores import FAISS
 from langchain.chat_models import ChatOpenAI
 from langchain.memory import ConversationBufferMemory
 from langchain.chains import ConversationalRetrievalChain
-from htmlTemplates import css, bot_template, user_template
+from htmlTemplates import css, bot_template, user_template, sidebar_text
 from langchain.llms import HuggingFaceHub
 
-def get_pdf_text(pdf_docs):
+def get_pdf_text(pdf_paths):
     text = ""
-    for pdf in pdf_docs:
-        pdf_reader = PdfReader(pdf)
+    for pdf_path in pdf_paths:
+        pdf_reader = PdfReader(pdf_path)
         for page in pdf_reader.pages:
             text += page.extract_text()
     return text
@@ -62,30 +63,60 @@ def handle_userinput(user_question):
 
 def main():
     load_dotenv()
-    st.set_page_config(page_title="Chat with your data")
+    st.set_page_config(page_title="Chat with LegisBot")
     st.markdown(css, unsafe_allow_html=True)
     if "conversation" not in st.session_state:
         st.session_state.conversation = None
     if "chat_history" not in st.session_state:
         st.session_state.chat_history = None
-    st.header("Chat with multiple PDFs")
-    user_question = st.text_input("Ask a question related to your data:")
+    
+    st.markdown('''
+    <div align="center">
+        <h3>Concept Statement</h3>
+        <p>This research examines how policies in the world powers affect AI strategies and self-regulation in leading tech companies (the Big Nine). It explores the potential for AI to help regulate itself, given its understanding of its own systems and potential general intelligence. The project aims to highlight the need for ethical AI policies and international cooperation for the benefit of humanity.</p>
+    </div>
+    ''', unsafe_allow_html=True)
+
+    st.header("Ask LegisBot about Legislation")
+    user_question = st.text_input("Ask LegisBot a question related to legislation:")
     if user_question:
         handle_userinput(user_question)
     with st.sidebar:
-        st.subheader("Your documents")
-        pdf_docs = st.file_uploader("Upload your PDFs here and click on 'Process'", accept_multiple_files=True)
-        if st.button("Process"):
+        st.markdown(sidebar_text, unsafe_allow_html=True)
+        
+        st.subheader("Upload your PDF")
+        uploaded_files = st.file_uploader("Add your PDF files here", accept_multiple_files=True, type=["pdf"])
+
+        st.subheader("Process Saved Documents")
+        st.markdown("Press the button to process saved documentation related to legislation, including any uploaded PDFs.")
+
+        if st.button("Process", key="process-button"):
             with st.spinner("Processing"):
-                # get pdf text
-                raw_text = get_pdf_text(pdf_docs)
-                # get the text chunks
-                text_chunks = get_text_chunks(raw_text)
-                # create vector store
-                vectorstore = get_vectorstore(text_chunks)
-                # create conversation chain
-                st.session_state.conversation = get_conversation_chain(vectorstore)
+                # Get list of PDF files from the dataPool directory
+                data_pool_dir = "src/dataPool"
+                pdf_paths = [os.path.join(data_pool_dir, f) for f in os.listdir(data_pool_dir) if f.endswith('.pdf')]
+                
+                # Add uploaded files to the list
+                if uploaded_files:
+                    uploaded_file_paths = []
+                    for uploaded_file in uploaded_files:
+                        # Save the uploaded files to a temporary location
+                        with open(os.path.join(data_pool_dir, uploaded_file.name), "wb") as f:
+                            f.write(uploaded_file.getbuffer())
+                        uploaded_file_paths.append(os.path.join(data_pool_dir, uploaded_file.name))
+                    pdf_paths.extend(uploaded_file_paths)
+                
+                if pdf_paths:
+                    # get pdf text
+                    raw_text = get_pdf_text(pdf_paths)
+                    # get the text chunks
+                    text_chunks = get_text_chunks(raw_text)
+                    # create vector store
+                    vectorstore = get_vectorstore(text_chunks)
+                    # create conversation chain
+                    st.session_state.conversation = get_conversation_chain(vectorstore)
+                else:
+                    st.warning("No PDF files found in the dataPool directory.")
 
 if __name__ == '__main__':
     main()
-
