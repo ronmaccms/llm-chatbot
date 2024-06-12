@@ -10,7 +10,8 @@
   <h3 align="center">AI Governance Chatbot</h3>
   <p align="center" style="font-weight: bold;">
     A project to analyze and suggest AI governance strategies<br>
-    <!-- <a href="LINK_TO_DEMO">View Demo</a> -->
+    <a href="https://github.com/ronmaccms/llm-chatbot/blob/main/src/img/legisbot-gettingstarted.mp4">View Demo</a>
+    ·
     <a href="mailto:andres.roncal@students.iaac.net">Report Bug</a>
     ·
     <a href="mailto:andres.roncal@students.iaac.net">Request Feature</a>
