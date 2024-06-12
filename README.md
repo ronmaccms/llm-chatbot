@@ -70,12 +70,7 @@ To get a local copy up and running, follow these steps:
         ```
     - Save the `.env` file. **Do not** commit this file to your repository. It contains sensitive information.
 
-6. **Install the required packages**
-    ```sh
-    pip install -r requirements.txt
-    ```
-
-7. **Run the Streamlit app**
+6. **Run the Streamlit app**
     ```sh
     streamlit run app.py
     ```
