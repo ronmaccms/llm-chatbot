@@ -61,8 +61,8 @@ To get a local copy up and running, follow these steps:
         source .venv/bin/activate
         ```
 
-5. **Create a .env file**
-    - In the project directory, create a new file named `.env`.
+5. **Add your Keys .env file**
+    - In the project directory, add your key in the file named `.env`.
     - Open the `.env` file and add your OpenAI and Hugging Face API keys like this:
         ```sh
         OPENAI_API_KEY=your_openai_api_key
