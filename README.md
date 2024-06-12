@@ -1,7 +1,7 @@
 <!-- PROJECT STATUS -->
-<div align="center">
+<!-- <div align="center">
   <h3>🚧 This project is currently under development 🚧</h3>
-</div>
+</div> -->
 
 <!-- PROJECT LOGO -->
 <br />
